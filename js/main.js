@@ -13,19 +13,9 @@ function doRouting(){
 		document.getElementById("currentPage").textContent = "Homepage";
 	});
 
-	myRoma.addRoute('/works', function(){
-		console.log("Works");
-		document.getElementById("currentPage").textContent = "Works";
-	});
-
 	myRoma.addRoute('/about', function(){
 		console.log("About");
 		document.getElementById("currentPage").textContent = "About";
-	});
-
-	myRoma.addRoute('/work/:id', function(params){
-		console.log("Work " + params.id);
-		document.getElementById("currentPage").textContent = "Work " + params.id;
 	});
 
 	myRoma.addRoute('/contact', function(){
