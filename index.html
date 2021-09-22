@@ -11,9 +11,24 @@
 	<meta name="pinterest" content="nopin" />
 </head>
 <body>
-	<h1>SPAStarter / <span id="currentPage"></span></h1>
-	<p><a href="/">Homepage</a> / <a href="/about">About</a> / <a href="/contact">Contact</a></p>
-	<p>A starter for small SPA that includes LeSS, jQuery, GSAP, Roma as routing library and a basic htaccess for apache based server.</p>
+	<div id="header">
+		<ul class="menu">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+	</div>
+	<div id="wrapper">
+		<div class="panel homepage">
+			<p>Homepage</p>
+		</div>
+		<div class="panel about">
+			<p>About</p>
+		</div>
+		<div class="panel contact">
+			<p>Contact</p>
+		</div>
+	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/less@3.13"></script>
 	<script src="js/jquery.min.js"></script>

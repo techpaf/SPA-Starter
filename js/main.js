@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	// DOM is ready...
 	console.log("What will you build today ?");
-
+	bindEvents();
 	doRouting();
 });
 
@@ -10,18 +10,40 @@ function doRouting(){
 
 	myRoma.addRoute('/', function(){
 		console.log("Homepage");
-		document.getElementById("currentPage").textContent = "Homepage";
+		displayPanel("homepage");
 	});
 
 	myRoma.addRoute('/about', function(){
 		console.log("About");
-		document.getElementById("currentPage").textContent = "About";
+		displayPanel("about");
 	});
 
 	myRoma.addRoute('/contact', function(){
 		console.log("Contact");
-		document.getElementById("currentPage").textContent = "Contact";
+		displayPanel("contact");
 	});
 
 	myRoma.init();
+}
+
+function bindEvents(){
+	$('a').each(function(){
+		$(this).click(function(e){
+			if($(this).attr("href")[0] == "/"){
+				myRoma.goTo($(this).attr('href'));
+				e.preventDefault();
+			}
+		});
+	});
+}
+
+function displayPanel(panelClass){
+	$('.panel').each(function(){
+		if($(this).hasClass(panelClass)){
+			$(this).show();
+		}
+		else{
+			$(this).hide();
+		}
+	});
 }
